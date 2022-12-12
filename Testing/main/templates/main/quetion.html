@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Test {{ test_title.id}} | {{ test_title.title }}</h1>
+    <div id="out">
+    {% for q in quetions %}
+    {{ q.id }} <br>
+    {{ q.title }} <br>
+    
+    
+        <div class="out_{{ q.id }}">
+            <input type="radio"  name="name {{ q.id }}" id="1 {{ q.id }}" value="1"><label for="1 {{ q.id }}">{{  q.variant_out_put_1 }}</label> <br>
+            <input type="radio" name="name {{ q.id }}" id="2 {{ q.id }}" value="2"><label for="2 {{ q.id }}">{{  q.variant_out_put_2 }}</label> <br>
+            <input type="radio"  name="name {{ q.id }}" id="3 {{ q.id }}"  value="3"><label for="3 {{ q.id }}">{{  q.variant_out_put_3 }}</label> <br>
+            <input type="radio" name="name {{ q.id }}" id="4 {{ q.id }}"  value="4"><label for="4 {{ q.id }}">{{  q.variant_out_put_4 }}</label> <br>
+            
+    </div>
+    {% endfor %}
+</div>
+    
+    <button type="button" onclick="Test()">Test</button>
+</body>
+<script>
+    let test = document.getElementById('out').children;
+    for (let i = 1;i<=test.length;i++){
+        let el1 = test[i];
+        if (el1.tagName === "DIV"){
+            console.log(el1);
+            let output = test[i].children;
+            for (let d = 0;d<=output.length;d++){
+                let el = output[d];
+                console.log()
+                if (el.name == 'name '+el.id){
+                    console.log(el.value,el.id);
+                }
+            }
+        } 
+    }
+    console.log(test);
+    let radio = document.getElementById('name');
+    let out = [];
+
+    
+    
+    
+</script>
+</html>

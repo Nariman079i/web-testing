@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for i in test %}
+    <div class="test {{ i.id}}"><span class="title">{{ i.title }}</span><a href="{% url 'quetions' i.id %}">Перейти</button></a><br></div>
+    {% endfor %}
+</body>
+<style>
+    .test{
+        width: 600px;
+        height: 100px;
+
+        background: #FFFFFF;
+        box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.11);
+        margin: 30px auto;
+    }
+    span{
+        margin-left: 30px;
+        font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 100px;
+/* identical to box height */
+
+
+color: #000000;
+
+    }
+    a{
+        margin-top: -65px;
+        margin-right: 30px;
+        display: block;
+        
+        text-align:right ;
+        
+        font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+
+/* identical to box height */
+
+
+color: #000000;
+    }
+</style>
+</html>
